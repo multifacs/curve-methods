@@ -17,6 +17,12 @@ class Ellipsis : public Curve {
     phi = 0;
     maxT = 2 * M_PI;
   };
+  Ellipsis(Point c, double a, double b, double phi) : Curve() {
+    this->c = c;
+    this->a = a;
+    this->b = b;
+    this->phi = phi;
+  };
 
   // Переопределяем функции получения x, y, x', y'
   double getX(double t) override {

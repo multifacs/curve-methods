@@ -16,6 +16,11 @@ class SineWave : public Curve {
     C = 0;
     maxT = 3 * M_PI;  // Задаем максимальный t как 3*PI
   };
+  SineWave(double A, double T, double C) : Curve() {
+    this->A = A;
+    this->T = T;
+    this->C = C;
+  };
 
   // Добавляем возможность изменять min max t
   void setMinT(double t) { minT = t; };

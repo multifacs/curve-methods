@@ -10,6 +10,10 @@ class Section : public Curve {
  public:
   // В конструкторе вызываем конструктор предка
   Section() : Curve(){};
+  Section(Point a, Point b) : Curve(){
+    this->a = a;
+    this->b = b;
+  };
 
   // Переопределяем функции получения x, y, x', y'
   double getX(double t) override {
