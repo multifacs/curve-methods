@@ -1,16 +1,16 @@
 #pragma once
 #include "Curve.h"
 
-// РљР»Р°СЃСЃ СЌР»Р»РёРїСЃР°
+// Класс эллипса
 class Ellipsis : public Curve {
  private:
-  Point c;     // Р¦РµРЅС‚СЂ СЌР»Р»РёРїСЃР°
-  double a;    // РћСЃСЊ A
-  double b;    // РћСЃСЊ B
-  double phi;  // РќР°РєР»РѕРЅ СЌР»Р»РёРїСЃР° РІ СЂР°РґРёР°РЅР°С…
+  Point c;     // Центр эллипса
+  double a;    // Ось A
+  double b;    // Ось B
+  double phi;  // Наклон эллипса в радианах
 
  public:
-  // Р’ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ РІС‹Р·С‹РІР°РµРј РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРґРєР°
+  // В конструкторе вызываем конструктор предка
   Ellipsis() : Curve() {
     a = 0;
     b = 0;
@@ -18,7 +18,7 @@ class Ellipsis : public Curve {
     maxT = 2 * M_PI;
   };
 
-  // РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј С„СѓРЅРєС†РёРё РїРѕР»СѓС‡РµРЅРёСЏ x, y, x', y'
+  // Переопределяем функции получения x, y, x', y'
   double getX(double t) override {
     return c.getX() + a * cos(t) * cos(phi) - b * sin(t) * sin(phi);
   }

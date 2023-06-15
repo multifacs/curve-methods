@@ -1,15 +1,15 @@
 #pragma once
-#define _USE_MATH_DEFINES
 #include <cmath>
+#define M_PI 3.14159265358979323846 /* pi */
 
-// РљР»Р°СЃСЃ С‚РѕС‡РєРё
+// Класс точки
 class Point {
  private:
   double x;
   double y;
 
  public:
-  // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
+  // Конструкторы
   Point() {
     x = 0;
     y = 0;
@@ -18,13 +18,13 @@ class Point {
     this->x = x;
     this->y = y;
   }
-  // РЎРµС‚С‚РµСЂС‹ Рё РіРµС‚С‚РµСЂС‹
+  // Сеттеры и геттеры
   double setX(double x) { this->x = x; };
   double setY(double y) { this->y = y; };
   double getX() const { return x; };
   double getY() const { return y; };
 
-  // РЎС‚Р°С‚РёС‡РµСЃРєРёР№ РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ РјРµР¶РґСѓ С‚РѕС‡РєР°РјРё
+  // Статический метод получения расстояния между точками
   static double getDistance(Point a, Point b) {
     return sqrt(pow((b.x - a.x), 2) + pow((b.y - a.y), 2));
   }
