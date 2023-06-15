@@ -24,6 +24,16 @@ class Ellipsis : public Curve {
     this->phi = phi;
   };
 
+  // Геттеры и сеттеры
+  Point getC() const { return c; };
+  double getA() const { return a; };
+  double getB() const { return b; };
+  double getPhi() const { return phi; };
+  void setC(Point c) { this->c = c; };
+  void setB(double a) { this->a = a; };
+  void setB(double b) { this->b = b; };
+  void setPhi(double phi) { this->phi = phi; };
+
   // Переопределяем функции получения x, y, x', y'
   double getX(double t) override {
     return c.getX() + a * cos(t) * cos(phi) - b * sin(t) * sin(phi);

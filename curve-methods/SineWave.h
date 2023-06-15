@@ -22,6 +22,14 @@ class SineWave : public Curve {
     this->C = C;
   };
 
+  // Геттеры и сеттеры
+  double getA() const { return A; };
+  double getT() const { return T; };
+  double getC() const { return C; };
+  void setA(double A) { this->A = A; };
+  void setT(double T) { this->T = T; };
+  void setC(double C) { this->C = C; };
+
   // Добавляем возможность изменять min max t
   void setMinT(double t) { minT = t; };
   void setMaxT(double t) { maxT = t; };

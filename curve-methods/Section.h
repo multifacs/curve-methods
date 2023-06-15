@@ -10,10 +10,16 @@ class Section : public Curve {
  public:
   // В конструкторе вызываем конструктор предка
   Section() : Curve(){};
-  Section(Point a, Point b) : Curve(){
+  Section(Point a, Point b) : Curve() {
     this->a = a;
     this->b = b;
   };
+
+  // Геттеры и сеттеры
+  Point getA() const { return a; };
+  Point getB() const { return b; };
+  void setA(Point a) { this->a = a; };
+  void setB(Point b) { this->b = b; };
 
   // Переопределяем функции получения x, y, x', y'
   double getX(double t) override {
