@@ -3,7 +3,7 @@
 #include "Point.h"
 
 class Curve {
- private:
+ protected:
   double minT;
   double maxT;
 
@@ -12,10 +12,6 @@ class Curve {
     minT = 0;
     maxT = 1;
   };
-  Curve(double minT, double maxT) {
-    this->minT = minT;
-    this->maxT = maxT;
-  }
 
   virtual double getX(double t) { return 0; };
   virtual double getY(double t) { return 0; };
@@ -28,7 +24,7 @@ class Curve {
     if (getXDash(t) == 0) return 0;
     return getYDash(t) / getXDash(t);
   }
-  double getLength(int n) {
+  double getLength(int n = 100) {
     double len = 0;
     double sec = (maxT - minT) / (double)n;
     for (int i = 0; i < n - 1; i++) {
@@ -40,7 +36,7 @@ class Curve {
     }
     return len;
   };
-  Point getProjection(Point p, int n){
+  Point getProjection(Point p, int n = 100){
     Point closestPoint(getX(minT), getY(minT));
     double sec = (maxT - minT) / (double)n;
     for (int i = 0; i < n; i++) {
