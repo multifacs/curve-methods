@@ -6,12 +6,12 @@
 
 int main() {
   using std::cout;
-  setlocale(LC_ALL, "Russian");
+  //setlocale(LC_ALL, "Russian");
 
-  cout << "Ïðîâåðêà êëàññà Òî÷êà\n";
+  cout << "ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° ÐºÐ»Ð°ÑÑÐ° Ð¢Ð¾Ñ‡ÐºÐ°\n";
   Point a(1, 5);
   Point b(10, 12);
-  cout << "Ñîçäàíà òî÷êà à(" << a.getX() << ", " << a.getY() << ")\n";
-  cout << "Ñîçäàíà òî÷êà b(" << b.getX() << ", " << b.getY() << ")\n";
-  cout << "Ðàññòîÿíèå ìåæäó òî÷êàìè: " << Point::getDistance(a, b) << "\n";
+  cout << "Ð¡Ð¾Ð·Ð´Ð°Ð½Ð° Ñ‚Ð¾Ñ‡ÐºÐ° Ð°(" << a.getX() << ", " << a.getY() << ")\n";
+  cout << "Ð¡Ð¾Ð·Ð´Ð°Ð½Ð° Ñ‚Ð¾Ñ‡ÐºÐ° b(" << b.getX() << ", " << b.getY() << ")\n";
+  cout << "Ð Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ð¼ÐµÐ¶Ð´Ñƒ Ñ‚Ð¾Ñ‡ÐºÐ°Ð¼Ð¸: " << Point::getDistance(a, b) << "\n";
 }

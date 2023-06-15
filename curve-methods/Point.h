@@ -2,14 +2,14 @@
 #include <cmath>
 #define M_PI 3.14159265358979323846 /* pi */
 
-// Класс точки
+// РљР»Р°СЃСЃ С‚РѕС‡РєРё
 class Point {
  private:
   double x;
   double y;
 
  public:
-  // Конструкторы
+  // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
   Point() {
     x = 0;
     y = 0;
@@ -18,13 +18,13 @@ class Point {
     this->x = x;
     this->y = y;
   }
-  // Сеттеры и геттеры
+  // РЎРµС‚С‚РµСЂС‹ Рё РіРµС‚С‚РµСЂС‹
   double setX(double x) { this->x = x; };
   double setY(double y) { this->y = y; };
   double getX() const { return x; };
   double getY() const { return y; };
 
-  // Статический метод получения расстояния между точками
+  // РЎС‚Р°С‚РёС‡РµСЃРєРёР№ РјРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ РјРµР¶РґСѓ С‚РѕС‡РєР°РјРё
   static double getDistance(Point a, Point b) {
     return sqrt(pow((b.x - a.x), 2) + pow((b.y - a.y), 2));
   }

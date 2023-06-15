@@ -1,27 +1,27 @@
 #pragma once
 #include "Curve.h"
 
-// Класс синусоиды
+// РљР»Р°СЃСЃ СЃРёРЅСѓСЃРѕРёРґС‹
 class SineWave : public Curve {
  private:
-  double A;  // Амплитуда
-  double T;  // Период
-  double C;  // Смещение по оси Y
+  double A;  // РђРјРїР»РёС‚СѓРґР°
+  double T;  // РџРµСЂРёРѕРґ
+  double C;  // РЎРјРµС‰РµРЅРёРµ РїРѕ РѕСЃРё Y
 
  public:
-  // В конструкторе вызываем конструктор предка
+  // Р’ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂРµ РІС‹Р·С‹РІР°РµРј РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРґРєР°
   SineWave() : Curve() {
     A = 0;
     T = 0;
     C = 0;
-    maxT = 3 * M_PI;  // Задаем максимальный t как 3*PI
+    maxT = 3 * M_PI;  // Р—Р°РґР°РµРј РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ t РєР°Рє 3*PI
   };
 
-  // Добавляем возможность изменять min max t
+  // Р”РѕР±Р°РІР»СЏРµРј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РёР·РјРµРЅСЏС‚СЊ min max t
   void setMinT(double t) { minT = t; };
   void setMaxT(double t) { maxT = t; };
 
-  // Переопределяем функции получения x, y, x', y'
+  // РџРµСЂРµРѕРїСЂРµРґРµР»СЏРµРј С„СѓРЅРєС†РёРё РїРѕР»СѓС‡РµРЅРёСЏ x, y, x', y'
   double getX(double t) override { return t; }
   double getY(double t) override { return A + sin(M_PI * 2 / T * t) + C; }
   double getXDash(double t) override { return 1; }
