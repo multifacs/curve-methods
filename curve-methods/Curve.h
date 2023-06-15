@@ -18,6 +18,7 @@ class Curve {
   virtual double getXDash(double t) { return 0; };
   virtual double getYDash(double t) { return 0; };
 
+  Point getPoint(double t) { return Point(getX(t), getY(t)); }
   Point getTInfo() { return Point(minT, maxT); };
 
   double getDerivative(double t) {
