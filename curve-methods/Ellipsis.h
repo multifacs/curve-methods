@@ -22,6 +22,7 @@ class Ellipsis : public Curve {
     this->a = a;
     this->b = b;
     this->phi = phi;
+    maxT = 2 * M_PI;
   };
 
   // Геттеры и сеттеры
@@ -30,7 +31,7 @@ class Ellipsis : public Curve {
   double getB() const { return b; };
   double getPhi() const { return phi; };
   void setC(Point c) { this->c = c; };
-  void setB(double a) { this->a = a; };
+  void setA(double a) { this->a = a; };
   void setB(double b) { this->b = b; };
   void setPhi(double phi) { this->phi = phi; };
 

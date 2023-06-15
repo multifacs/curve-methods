@@ -20,6 +20,7 @@ class SineWave : public Curve {
     this->A = A;
     this->T = T;
     this->C = C;
+    maxT = 3 * M_PI;
   };
 
   // Геттеры и сеттеры
